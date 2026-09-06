@@ -1,7 +1,6 @@
-function openMenu() {
-  document.body.classList += " menu--open"
-}
+import React from "react";
+import ReactDOM from 'react-dom/client'
 
-function closeMenu() {
-  document.body.classList.remove('menu--open')
-}
+import App from "./App";
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)
