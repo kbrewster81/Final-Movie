@@ -1,38 +1,33 @@
+import { useEffect, useState } from "react";
+import terminator1 from "./assets/The Terminator.jpg";
+import terminator2 from "./assets/Terminator-2.jpg";
+import terminator3 from "./assets/Terminator-3.jpg";
+import terminator4 from "./assets/The Terminator-Sarah Connor Chronicles.jpg";
+import terminator5 from "./assets/Terminator-Salvation.jpg";
+import terminator6 from "./assets/Terminator-Genisys.jpg";
+import movie reel from "./assets/movie-reel.jpg";
+
 const Movies = () => {
-  let movies = [];
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    getMovies().then((data) => {
+      console.log(data);
+      setMovies(data);
+    });
+  }, []);
 
-  async function renderMovies(filter) {
-    const moviesWrapper = document.querySelector(".movies");
-
-    let filteredMovies = [...movies];
-
-    if (filter === "LOW_TO_HIGH") {
-      filteredMovies.sort((a, b) => Number(a.Year) - Number(b.Year));
-    } else if (filter === "HIGH_TO_LOW") {
-      filteredMovies.sort((a, b) => Number(b.Year) - Number(a.Year));
-    }
-
-    const moviesHtml = filteredMovies
-      .map((movie) => {
-        return `
-        <div className="movie">
-          <figure className="movie__img--wrapper">
-            <img className="movie__img" src="${movie.Poster}" alt="${movie.Title}">
-          </figure>
-          <div className="movie__title">
-            <h3>${movie.Title}</h3>
-            <p>${movie.Year}</p>
-          </div>
-        </div>
-      `;
-      })
-      .join("");
-
-    moviesWrapper.innerHTML = moviesHtml;
-  }
 
   function filterMovies(event) {
-    renderMovies(event.target.value);
+    const filter = event.target.value;
+    const sortedMovies = [...movies];
+
+    if (filter === "LOW_TO_HIGH") {
+      sortedMovies.sort((a, b) => Number(a.Year) - Number(b.Year));
+    } else if (filter === "HIGH_TO_LOW") {
+      sortedMovies.sort((a, b) => Number(b.Year) - Number(a.Year));
+    }
+
+    setMovies(sortedMovies);
   }
 
   async function searchMovies() {
@@ -48,9 +43,8 @@ const Movies = () => {
 
       const data = await response.json();
 
-      movies = data.Search || [];
-      renderMovies();
-    } catch (error) {
+      setMovies(data.Search || []);
+      } catch (error) {
       document.querySelector(".movies").innerHTML =
         `<p>Something went wrong. Please try again.</p>`;
     }
@@ -72,8 +66,6 @@ const Movies = () => {
     });
   }
 
-  renderMovies();
-
   function getMovies() {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -81,42 +73,42 @@ const Movies = () => {
           {
             id: 1,
             Title: "The Terminator",
-            Poster: "The Terminator.jpg",
+            Poster: terminator1,
             Year: "1984",
             Type: "movie",
           },
           {
             id: 2,
             Title: "Terminator 2: Judgment Day",
-            Poster: "Terminator-2.jpg",
+            Poster: terminator2,
             Year: "1991",
             Type: "movie",
           },
           {
             id: 3,
             Title: "Terminator 3: Rise of the Machines",
-            Poster: "Terminator-3.jpg",
+            Poster: terminator3,
             Year: "2003",
             Type: "movie",
           },
           {
             id: 4,
             Title: "The Terminator-Sarah Connor Chronicles",
-            Poster: "The Terminator-Sarah Connor Chronicles.jpg",
+            Poster: terminator4,
             Year: "2008",
             Type: "movie",
           },
           {
             id: 5,
             Title: "Terminator Salvation",
-            Poster: "Terminator-Salvation.jpg",
+            Poster: terminator5,
             Year: "2009",
             Type: "movie",
           },
           {
             id: 6,
             Title: "Terminator Genisys",
-            Poster: "Terminator-Genisys.jpg",
+            Poster: terminator6,
             Year: "2015",
             Type: "movie",
           },
@@ -126,13 +118,14 @@ const Movies = () => {
   }
   return (
     <>
-      <section>
+      <section id="landing">
         <nav>
           <div className="nav__container">
+            <img className="background-image" src={movie-reel} alt="" />
             <ul className="nav__links">
               <li>
                 <a href="#" className="nav__link">
-                  Home
+                    Home
                 </a>
               </li>
               <li>
@@ -193,7 +186,6 @@ const Movies = () => {
           </div>
         </nav>
       </section>
-
       <main id="movies__main">
         <section>
           <div className="container">
@@ -202,20 +194,33 @@ const Movies = () => {
                 <h2 className="section__title movies__header--title">
                   All <span className="purple">Movies</span>
                 </h2>
-                <select id="filter" onChange={() => filterMovies(event)}>
+                <select id="filter" onChange={filterMovies}>
                   <option value="SORT">Sort</option>
                   <option value="LOW_TO_HIGH">Year, Low to High</option>
                   <option value="HIGH_TO_LOW">Year, High to Low</option>
                 </select>
               </div>
               <div className="movies">
-                <p className="fas fa-spinner movies__loading--spinner"></p>
+                {movies.map((movie) => (
+                  <div className="movie" key={movie.id}>
+                    <figure className="movie__img--wrapper">
+                      <img
+                        className="movie__img"
+                        src={movie.Poster}
+                        alt={movie.Title}
+                      />
+                    </figure>
+                    <div className="movie__title">
+                      <h3>{movie.Title}</h3>
+                      <p>{movie.Year}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
       </main>
-
       <footer>
         <div className="container">
           <div className="row row__column">

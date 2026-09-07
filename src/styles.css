@@ -140,7 +140,7 @@ button:active {
 
 .menu__link {
   color: white;
-  font-size: 40px;
+  font-size: 20px;
 }
 
 .btn__menu--close {
@@ -170,7 +170,8 @@ LANDING
   background-image: url("assets/movie-reel.jpg");
   width: 200%;
   height: 300px;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center;
 }
 
 
