@@ -5,7 +5,8 @@ import terminator3 from "./assets/Terminator-3.jpg";
 import terminator4 from "./assets/The Terminator-Sarah Connor Chronicles.jpg";
 import terminator5 from "./assets/Terminator-Salvation.jpg";
 import terminator6 from "./assets/Terminator-Genisys.jpg";
-import movie reel from "./assets/movie-reel.jpg";
+import movieReel from "./assets/movie-reel.jpg";
+import Home from "./Home.jsx";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -15,7 +16,6 @@ const Movies = () => {
       setMovies(data);
     });
   }, []);
-
 
   function filterMovies(event) {
     const filter = event.target.value;
@@ -44,7 +44,7 @@ const Movies = () => {
       const data = await response.json();
 
       setMovies(data.Search || []);
-      } catch (error) {
+    } catch (error) {
       document.querySelector(".movies").innerHTML =
         `<p>Something went wrong. Please try again.</p>`;
     }
@@ -118,74 +118,27 @@ const Movies = () => {
   }
   return (
     <>
-      <section id="landing">
-        <nav>
-          <div className="nav__container">
-            <img className="background-image" src={movie-reel} alt="" />
-            <ul className="nav__links">
-              <li>
-                <a href="#" className="nav__link">
-                    Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="nav__link">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="nav__link nav__link--primary">
-                  Movies
-                </a>
-              </li>
-            </ul>
-            <input
-              className="input__search"
-              type="text"
-              placeholder="Search for a movie"
-            ></input>
-            <button className="btn__menu" onClick={() => openMenu()}>
-              <p className="fas fa-bars"></p>
-            </button>
-            <div className="menu__backdrop" style={{ visibility: "hidden" }}>
-              <button
-                className="btn__menu btn__menu--close"
-                onClick={() => closeMenu()}
-              >
-                <p className="fas fa-times"></p>
-              </button>
-              <ul className="menu__links">
-                <li className="menu__list">
-                  <a
-                    href="#"
-                    className="menu__link"
-                    onClick={() => closeMenu()}
-                  >
-                    Home
-                  </a>
-                </li>
-                <li className="menu__list">
-                  <a
-                    href="#features"
-                    className="menu__link"
-                    onClick={() => closeMenu()}
-                  >
-                    Movies
-                  </a>
-                </li>
-                <li className="menu__list">
-                  <a
-                    className="menu__link no-cursor"
-                    onClick={() => closeMenu()}
-                  >
-                    Contacts
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </section>
+      <nav>
+        <div className="nav__container">
+          <ul className="nav__links">
+            <li>
+              <a href="#" className="nav__link">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#" className="nav__link">
+                Contact
+              </a>
+            </li>
+            <li>
+              <a href="#" className="nav__link">
+                Movies
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <main id="movies__main">
         <section>
           <div className="container">

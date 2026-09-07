@@ -1,12 +1,11 @@
 import Movies from "./Movies";
+import Home from "./Pages/Home";
 
 function App() {
-
   return (
     <>
-     <Movies className="Movies">
-
-     </Movies>
+      <Home className="Home"></Home>
+      <Movies className="Movies"></Movies>
     </>
   );
 }

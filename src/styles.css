@@ -18,6 +18,7 @@ body {
 nav {
   height: 80px;
   display: flex;
+  background-color: lightgray;
 }
 
 
@@ -56,6 +57,10 @@ h2 {
   font-size: 32px;
   margin-bottom: 32px;
   text-align: center;
+  position: absolute;
+  top: 75%;
+  bottom: 15%;
+  transform: translateY(-50%);
 }
 
 h3 {
@@ -164,14 +169,14 @@ LANDING
 .nav__container {
   width: 100%;
   max-width: 1200px;
+  background-color: lightgray;
 }
 
 .background-image {
   background-image: url("assets/movie-reel.jpg");
-  width: 200%;
+  width: 100%;
   height: 300px;
   background-size: cover;
-  background-position: center;
 }
 
 
@@ -181,7 +186,7 @@ LANDING
   margin-right: 20px;
   text-decoration: none;
   font-size: 24px;
-  color: blue;
+  color: white;
   font-weight: 600;
   padding: 14px;
   width: 100%;
@@ -282,7 +287,18 @@ button {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+#movies__main {
+ background-color: lightgray;
+}
 
+#movies__main .row {
+  flex-direction: column;
+  align-items: center;
+}
+
+#movies__main .movies {
+  width: 100%;
+}
 
 button.not-loading[ data-v-2a11e7ca] {
   border: 1px solid #6030b1;
@@ -323,6 +339,7 @@ svg:not(:root).svg-inline--fa {
 }
 
 .header__description {
+  color:#242424;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -493,6 +510,7 @@ FEATURES
   display: flex;
   flex-wrap: wrap;
 }
+
 
 .movie:hover {
   transform: scale(1.05);
