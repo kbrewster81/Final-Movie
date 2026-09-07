@@ -254,6 +254,9 @@ a.btn-contact {
 
  */
 
+ header {
+background-color: lightgrey;
+}
 .header__container {
   width: 100%;
   font-size: 24px;
@@ -265,6 +268,7 @@ a.btn-contact {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: lightgray;
 }
 
 button {
@@ -343,7 +347,8 @@ svg:not(:root).svg-inline--fa {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+  background-color: lightgrey;
+ }
 
 header .p {
   color:rgb(0, 0, 139);
@@ -705,9 +710,14 @@ select {
   }
 
   h2 {
-    font-size: 26px;
+    font-size: 20px;;
+    text-align: center;
+    position: absolute;
+    top: 75%;
+    bottom: 15%;
+    transform: translateY(-50%);
   }
-
+ 
   button {
     font-size: 18px;
   }
@@ -737,6 +747,14 @@ select {
 
   .highlight {
     width: 100%;
+  }
+  h2 {
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 75%;
+    bottom: 15%;
+    transform: translateY(-50%);
   }
 
 }

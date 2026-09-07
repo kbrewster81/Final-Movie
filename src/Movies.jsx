@@ -6,7 +6,7 @@ import terminator4 from "./assets/The Terminator-Sarah Connor Chronicles.jpg";
 import terminator5 from "./assets/Terminator-Salvation.jpg";
 import terminator6 from "./assets/Terminator-Genisys.jpg";
 import movieReel from "./assets/movie-reel.jpg";
-import Home from "./Home.jsx";
+import Home from "./Pages/Home";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
