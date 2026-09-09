@@ -528,6 +528,7 @@ FEATURES
   /* Added after tutorial to maintain image aspect ratio */
   object-fit: contain;
   object-position: left;
+  cursor: pointer;
 }
 
 .movie__img--wrapper {
