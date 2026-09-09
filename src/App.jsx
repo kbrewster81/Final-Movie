@@ -1,17 +1,18 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Movies from "./Movies";
 import Home from "./Pages/Home";
-import Movie from "./Pages/Movie.jsx";
+import HomePage from "./Pages/HomePage.jsx";
 import MovieDetail from "./Pages/MovieDetail";
 
 function App() {
   return (
-    <>
-      <Home className="Home"></Home>
-      <Movies className="Movies"></Movies>
-      <Movie className="Movie"></Movie>
-      <MovieDetail className="MovieDetail"></MovieDetail>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/movie/:id" component={MovieDetail} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

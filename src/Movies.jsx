@@ -83,7 +83,8 @@ const Movies = () => {
             id: 2,
             Title: "Terminator 2: Judgment Day",
             Poster: terminator2,
-            poster_path: "https://www.themoviedb.org/movie/280-terminator-2-judgment-day",
+            poster_path:
+              "https://www.themoviedb.org/movie/280-terminator-2-judgment-day",
             Year: "1991",
             Type: "movie",
           },
@@ -91,7 +92,8 @@ const Movies = () => {
             id: 3,
             Title: "Terminator 3: Rise of the Machines",
             Poster: terminator3,
-            poster_path: "https://www.themoviedb.org/movie/296-terminator-3-rise-of-the-machines",
+            poster_path:
+              "https://www.themoviedb.org/movie/296-terminator-3-rise-of-the-machines",
             Year: "2003",
             Type: "movie",
           },
@@ -99,7 +101,8 @@ const Movies = () => {
             id: 4,
             Title: "Terminator Salvation",
             Poster: terminator4,
-             poster_path: "https://www.themoviedb.org/movie/534-terminator-salvation",
+            poster_path:
+              "https://www.themoviedb.org/movie/534-terminator-salvation",
             Year: "2009",
             Type: "movie",
           },
@@ -107,7 +110,8 @@ const Movies = () => {
             id: 5,
             Title: "Terminator Genisys",
             Poster: terminator5,
-             poster_path: "https://www.themoviedb.org/movie/87101-terminator-genisys",
+            poster_path:
+              "https://www.themoviedb.org/movie/87101-terminator-genisys",
             Year: "2015",
             Type: "movie",
           },
@@ -115,10 +119,10 @@ const Movies = () => {
             id: 6,
             Title: "Terminator: Dark Fate",
             Poster: terminator6,
-            poster_path: "https://www.themoviedb.org/movie/290859-terminator-dark-fate",
+            poster_path:
+              "https://www.themoviedb.org/movie/290859-terminator-dark-fate",
             Year: "2019",
             Type: "movie",
-            
           },
         ]);
       });
@@ -160,7 +164,9 @@ const Movies = () => {
                   <option value="LOW_TO_HIGH">Year, Low to High</option>
                   <option value="HIGH_TO_LOW">Year, High to Low</option>
                 </select>
-                <h3 className="Featured Movies">Featured <span className="red">Movies</span></h3>
+                <h3 className="Featured Movies">
+                  Featured <span className="red">Movies</span>
+                </h3>
               </div>
               <div className="movies">
                 {movies.map((movie) => (

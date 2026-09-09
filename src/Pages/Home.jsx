@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import movieReel from "./assets/movie-reel.jpg";
+import movieReel from "../assets/movie-reel.jpg";
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -23,7 +23,7 @@ function Home() {
   return (
     <header>
       <div>
-        <img className="background-image" src={movieReel.jpg} alt="" />
+        <img className="background-image" src={movieReel} alt="" />
       </div>
       <div className="header__container">
         <div className="header__description">
