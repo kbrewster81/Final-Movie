@@ -8,8 +8,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/movie/:id" component={MovieDetail} />
+        <Route path="/" exact element={<HomePage />} />
+        <Route path="/movie/:id" element={<MovieDetail />} />
       </Routes>
     </BrowserRouter>
   );

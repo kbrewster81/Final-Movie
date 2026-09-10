@@ -5,7 +5,7 @@ import axios from "axios";
 
 const MovieDetail = () => {
   const { id } = useParams();
-  const [movie, setMovie] = useState(null);
+  const [movie, setMovie] = useState(id);
 
   useEffect(() => {
     axios
