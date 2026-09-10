@@ -1,23 +1,20 @@
 import { Link } from "react-router-dom";
-import Movies from "../Movies";
-import MovieList from "./MovieList";
+import { movies } from "../data/movies";
+
 
 const HomePage = () => {
-  const movies = [MovieList.id, MovieList.title, MovieList.poster_path];
-
   return (
     <div>
-      {Movies.map((movie) => (
-        <Link key={MovieList.id} to={`/movie/${Movies.id}`}>
+      {movies.map((movie) => (
+        <Link key={movie.id} to={`/movie/${movie.id}`}>
           <img
-            src={`https://image.tmdb.org/t/p/w1280/${Movies.poster_path}`}
-            alt={Movies.title}
-          />
-          <h3>{Movies.title}</h3>
+            src={movie.Poster} alt={movie.title} />
+          <h3>{movie.title}</h3>
         </Link>
       ))}
     </div>
   );
 };
+
 
 export default HomePage;
