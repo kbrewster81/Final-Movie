@@ -24,13 +24,13 @@ const MovieDetail = () => {
   return (
     <div>
       <Link to="/">
-       <button>Back to Home</button>
+        <button>Back to Home</button>
       </Link>
       <h1>{movie.title}</h1>
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
-        style={{width:"300px"}}
+        style={{ width: "300px" }}
       />
       <p>
         <strong>Rating:</strong> {movie.vote_average}
