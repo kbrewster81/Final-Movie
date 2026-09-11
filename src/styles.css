@@ -565,11 +565,17 @@ FEATURES
 
 p {
   font-size: 20px;
-  text-align: center;
+  text-align: right;
   max-width: 400px;
   margin: 0 auto;
   line-height: 1;
   cursor: pointer;
+}
+.movie__info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
 /* 

@@ -8,6 +8,7 @@ import terminator6 from "./assets/Terminator Dark Fate.jpg";
 import movieReel from "./assets/movie-reel.jpg";
 import Home from "./Pages/Home";
 import MovieList from "./Pages/MovieList";
+import { Link } from "react-router-dom";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -170,7 +171,11 @@ const Movies = () => {
               </div>
               <div className="movies">
                 {movies.map((movie) => (
-                  <div className="movie" key={movie.id}>
+                  <Link
+                    to={`/movie-details/${movie.id}`}
+                    className="movie"
+                    key={movie.id}
+                  >
                     <figure className="movie__img--wrapper">
                       <img
                         className="movie__img"
@@ -178,12 +183,14 @@ const Movies = () => {
                         alt={movie.Title}
                       />
                     </figure>
-                    <div className="movie__title">
-                      <h3>{movie.Title}</h3>
-                      <p>{movie.Year}</p>
+                    <div class="movie__info">
+                      <div className="movie__description">
+                        <h1>Movie Title</h1>
+                        <p>{movie.Year}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  </Link>
+                ))};
               </div>
             </div>
           </div>
