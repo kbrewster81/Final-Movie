@@ -19,6 +19,7 @@ function Home() {
   const handleMovieClick = (id) => {
     navigate(`/movie/${id}`);
   };
+  
 
   return (
     <header>

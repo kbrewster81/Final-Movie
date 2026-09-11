@@ -239,6 +239,16 @@ a.btn-contact {
   background-color: rgba(115, 66, 214, 0.1);
 }
 
+a:-webkit-any-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+a:-webkit-any-link:active {
+  cursor: pointer;
+}
+
+
+ 
 /*
 
  HEADER

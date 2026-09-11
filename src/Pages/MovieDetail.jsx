@@ -5,12 +5,13 @@ import axios from "axios";
 
 const MovieDetail = () => {
   const { id } = useParams();
+  console.log("Movie ID:", id);
   const [movie, setMovie] = useState(id);
 
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=5b53b7f6f16e2001e5418298c990bf2a`,
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${import.meta.env.VITE_TMDB_KEY}`,
       )
       .then((res) => setMovie(res.data))
       .catch((err) => console.error(err));

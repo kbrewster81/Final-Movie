@@ -72,7 +72,7 @@ const Movies = () => {
       setTimeout(() => {
         resolve([
           {
-            id: 1,
+            id: 218,
             Title: "The Terminator",
             Poster: terminator1,
             poster_path: "https://www.themoviedb.org/movie/218-the-terminator",
@@ -80,7 +80,7 @@ const Movies = () => {
             Type: "movie",
           },
           {
-            id: 2,
+            id: 280,
             Title: "Terminator 2: Judgment Day",
             Poster: terminator2,
             poster_path:
@@ -89,7 +89,7 @@ const Movies = () => {
             Type: "movie",
           },
           {
-            id: 3,
+            id: 296,
             Title: "Terminator 3: Rise of the Machines",
             Poster: terminator3,
             poster_path:
@@ -98,7 +98,7 @@ const Movies = () => {
             Type: "movie",
           },
           {
-            id: 4,
+            id: 534,
             Title: "Terminator Salvation",
             Poster: terminator4,
             poster_path:
@@ -107,7 +107,7 @@ const Movies = () => {
             Type: "movie",
           },
           {
-            id: 5,
+            id: 87101,
             Title: "Terminator Genisys",
             Poster: terminator5,
             poster_path:
@@ -116,7 +116,7 @@ const Movies = () => {
             Type: "movie",
           },
           {
-            id: 6,
+            id: 290859,
             Title: "Terminator: Dark Fate",
             Poster: terminator6,
             poster_path:
@@ -196,7 +196,6 @@ const Movies = () => {
               <a href="#" className="footer__link">
                 Home
               </a>
-              <a className="footer__link no-cursor">About</a>
               <a href="#features" className="footer__link">
                 Movies
               </a>
