@@ -40,7 +40,7 @@ const Movies = () => {
 
     try {
       const response = await fetch(
-        `https://www.omdbapi.com/?apikey=cc724532&s=${encodeURIComponent(searchTerm)}`,
+        `https://www.omdbapi.com/?apikey=cc724532&s=${searchTerm}`,
       );
 
       const data = await response.json();
@@ -73,57 +73,40 @@ const Movies = () => {
       setTimeout(() => {
         resolve([
           {
-            id: 218,
+            imdbID: "tt0088247",
             Title: "The Terminator",
             Poster: terminator1,
-            poster_path: "https://www.themoviedb.org/movie/218-the-terminator",
-            Year: "1984",
-            Type: "movie",
+            Year: 1984,
           },
           {
-            id: 280,
+            imdbID: "tt0103064",
             Title: "Terminator 2: Judgment Day",
             Poster: terminator2,
-            poster_path:
-              "https://www.themoviedb.org/movie/280-terminator-2-judgment-day",
-            Year: "1991",
-            Type: "movie",
+            Year: 1991,
           },
           {
-            id: 296,
+            imdbID: "tt0181852",
             Title: "Terminator 3: Rise of the Machines",
             Poster: terminator3,
-            poster_path:
-              "https://www.themoviedb.org/movie/296-terminator-3-rise-of-the-machines",
-            Year: "2003",
-            Type: "movie",
+            Year: 2003,
           },
           {
-            id: 534,
+            imdbID: "tt0438488",
             Title: "Terminator Salvation",
             Poster: terminator4,
-            poster_path:
-              "https://www.themoviedb.org/movie/534-terminator-salvation",
-            Year: "2009",
-            Type: "movie",
+            Year: 2009,
           },
           {
-            id: 87101,
+            imdbID: "tt1340138",
             Title: "Terminator Genisys",
             Poster: terminator5,
-            poster_path:
-              "https://www.themoviedb.org/movie/87101-terminator-genisys",
-            Year: "2015",
-            Type: "movie",
+            Year: 2015,
           },
           {
-            id: 290859,
+            imdbID: "tt6450804",
             Title: "Terminator: Dark Fate",
             Poster: terminator6,
-            poster_path:
-              "https://www.themoviedb.org/movie/290859-terminator-dark-fate",
-            Year: "2019",
-            Type: "movie",
+            Year: 2019,
           },
         ]);
       });
@@ -172,9 +155,9 @@ const Movies = () => {
               <div className="movies">
                 {movies.map((movie) => (
                   <Link
-                    to={`/movie-details/${movie.id}`}
+                    to={`/movie-details/${movie.imdbID}`}
                     className="movie"
-                    key={movie.id}
+                    key={movie.imdbID}
                   >
                     <figure className="movie__img--wrapper">
                       <img
@@ -185,12 +168,13 @@ const Movies = () => {
                     </figure>
                     <div class="movie__info">
                       <div className="movie__description">
-                        <h1>Movie Title</h1>
+                        <h1>{movie.Title}</h1>
                         <p>{movie.Year}</p>
                       </div>
                     </div>
                   </Link>
-                ))};
+                ))}
+                ;
               </div>
             </div>
           </div>
@@ -204,9 +188,9 @@ const Movies = () => {
                 Home
               </a>
               <a href="#features" className="footer__link">
-                Movies
+                Contact
               </a>
-              <a className="footer__link no-cursor">Contact</a>
+              <a className="footer__link no-cursor">Movies</a>
             </div>
             <div className="footer__copyright">
               Copyright &copy; 2026 Movies

@@ -9,11 +9,16 @@ const MovieDetail = () => {
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
+    const url = `https://www.omdbapi.com/?apikey=cc724532&i=${id}`;
+
+    console.log("Request URL:", url);
+
     axios
-      .get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=${import.meta.env.VITE_TMDB_KEY}`,
-      )
-      .then((res) => setMovie(res.data))
+      .get(url)
+      .then((res) => {
+        console.log("Movie data:", res.data);
+        setMovie(res.data);
+      })
       .catch((err) => console.error(err));
   }, [id]);
 
@@ -22,21 +27,47 @@ const MovieDetail = () => {
   }
 
   return (
-    <div>
-      <Link to="/">
+    <>
+      <Link className="movie-detail--link" to="/">
         <button>Back to Home</button>
       </Link>
-      <h1>{movie.title}</h1>
-      <img
-        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-        alt={movie.title}
-        style={{ width: "300px" }}
-      />
-      <p>
-        <strong>Rating:</strong> {movie.vote_average}
-      </p>
-      <p>{movie.overview}</p>
-    </div>
+
+      <div className="movie-detail">
+        <h1>{movie.Title}</h1>
+        <div className="movie-detail__content">
+          <img src={movie.Poster} alt={movie.Title} />
+          <div className="movie-detail__info">
+            <p className="movie__detail">
+              <strong>Rated:</strong> {movie.Rated}
+            </p>
+            <p className="movie__detail">
+              <strong>Runtime:</strong> {movie.Runtime}
+            </p>
+            <p className="movie__detail">
+              <strong>Genre:</strong> {movie.Genre}
+            </p>
+            <p className="movie__detail">
+              <strong>Director:</strong> {movie.Director}
+            </p>
+            <p className="movie__detail">
+              <strong>Writer:</strong> {movie.Writer}
+            </p>
+            <p className="movie__detail">
+              <strong>Actors:</strong> {movie.Actors}
+            </p>
+            <p className="movie__detail">
+              <strong>Box Office:</strong> {movie.BoxOffice}
+            </p>
+            <p className="movie__detail">
+              <strong>Rating:</strong> {movie.imdbRating}
+            </p>
+            <p className="movie__detail">
+              <strong>Plot:</strong>{movie.Plot}
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

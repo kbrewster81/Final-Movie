@@ -10,7 +10,7 @@ function Home() {
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=5b53b7f6f16e2001e5418298c990bf2a",
+        "OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=cc724532",
       )
       .then((res) => setMovies(res.data.results))
       .catch((err) => console.error(err));

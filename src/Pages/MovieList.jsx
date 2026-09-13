@@ -3,37 +3,39 @@ import { Link } from "react-router-dom";
 const MovieList = () => {
   const movies = [
     {
-      id: 218,
+      imdbID: "tt0088247",
       title: "The Terminator",
-      poster_path: "https://www.themoviedb.org/movie/218-the-terminator",
+      poster_path: "https://www.imdb.com/title/tt0088247/?ref_=fn_t_2",
     },
     {
-      id: 280,
+      imdbID: "tt0103064",
       title: "Terminator 2: Judgment Day",
       poster_path:
-        "https://www.themoviedb.org/movie/280-terminator-2-judgment-day",
+        "https://www.imdb.com/title/tt0103064/?ref_=nv_sr_srsg_0_tt_7_nm_0_in_1_q_Termin",
     },
     {
-      id: 296,
+      imdbID: "tt0181852",
       title: "Terminator 3: Rise of the Machines",
       poster_path:
-        "https://www.themoviedb.org/movie/296-terminator-3-rise-of-the-machines",
+        "https://www.imdb.com/title/tt0181852/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Terminator%203%3A%20Rise%20of%20the%20Machines",
     },
     {
-      id: 290859,
+      imdbID: "tt6450804",
       title: "Terminator: Dark Fate",
       poster_path:
-        "https://www.themoviedb.org/movie/290859-terminator-dark-fate",
+        "https://www.imdb.com/title/tt6450804/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Terminator%3A%20Dark%20Fate",
     },
     {
-      id: 534,
+      imdbID: "tt0438488",
       title: "Terminator Salvation",
-      poster_path: "https://www.themoviedb.org/movie/534-terminator-salvation",
+      poster_path:
+        "https://www.imdb.com/title/tt0438488/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Terminator%20Salvation",
     },
     {
-      id: 87101,
+      imdbID: "tt1340138",
       title: "Terminator Genisys",
-      poster_path: "https://www.themoviedb.org/movie/87101-terminator-genisys",
+      poster_path:
+        "https://www.imdb.com/title/tt1340138/?ref_=nv_sr_srsg_0_tt_7_nm_1_in_0_q_Terminator%20Genisys",
     },
   ];
 
@@ -42,7 +44,7 @@ const MovieList = () => {
       {movies.map((movie) => (
         <Link key={movie.id} to={`/movie-details/${movie.id}`}>
           <img
-            src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`}
+            src={`https://www.imdb.com/movie w500${movie.poster_path}`}
             alt={movie.title}
           />
           <h3>{movie.title}</h3>

@@ -5,56 +5,40 @@ import terminator4 from "../assets/Terminator-Salvation.jpg";
 import terminator5 from "../assets/Terminator-Genisys.jpg";
 import terminator6 from "../assets/Terminator Dark Fate.jpg";
 
-
 export const movies = [
   {
-    id: 1,
-    Title: "The Terminator",
-    Poster: terminator1,
-    poster_path: "https://www.themoviedb.org/movie/218-the-terminator",
-    Year: "1984",
-    Type: "movie",
+    id: tt0088247,
+    title: "The Terminator",
+    poster_path: "https://www.imdb.com/title/tt0088247/?ref_=fn_t_2",
   },
   {
-    id: 2,
-    Title: "Terminator 2: Judgment Day",
-    Poster: terminator2,
+    id: tt0103064,
+    title: "Terminator 2: Judgment Day",
     poster_path:
-      "https://www.themoviedb.org/movie/280-terminator-2-judgment-day",
-    Year: "1991",
-    Type: "movie",
+      "https://www.imdb.com/title/tt0103064/?ref_=nv_sr_srsg_0_tt_7_nm_0_in_1_q_Termin",
   },
   {
-    id: 3,
-    Title: "Terminator 3: Rise of the Machines",
-    Poster: terminator3,
+    id: tt0181852,
+    title: "Terminator 3: Rise of the Machines",
     poster_path:
-      "https://www.themoviedb.org/movie/296-terminator-3-rise-of-the-machines",
-    Year: "2003",
-    Type: "movie",
+      "https://www.imdb.com/title/tt0181852/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Terminator%203%3A%20Rise%20of%20the%20Machines",
   },
   {
-    id: 4,
-    Title: "Terminator Salvation",
-    Poster: terminator4,
-    poster_path: "https://www.themoviedb.org/movie/534-terminator-salvation",
-    Year: "2009",
-    Type: "movie",
+    id: tt6450804,
+    title: "Terminator: Dark Fate",
+    poster_path:
+      "https://www.imdb.com/title/tt6450804/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Terminator%3A%20Dark%20Fate",
   },
   {
-    id: 5,
-    Title: "Terminator Genisys",
-    Poster: terminator5,
-    poster_path: "https://www.themoviedb.org/movie/87101-terminator-genisys",
-    Year: "2015",
-    Type: "movie",
+    id: tt0438488,
+    title: "Terminator Salvation",
+    poster_path:
+      "https://www.imdb.com/title/tt0438488/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Terminator%20Salvation",
   },
   {
-    id: 6,
-    Title: "Terminator: Dark Fate",
-    Poster: terminator6,
-    poster_path: "https://www.themoviedb.org/movie/290859-terminator-dark-fate",
-    Year: "2019",
-    Type: "movie",
+    id: tt1340138,
+    title: "Terminator Genisys",
+    poster_path:
+      "https://www.imdb.com/title/tt1340138/?ref_=nv_sr_srsg_0_tt_7_nm_1_in_0_q_Terminator%20Genisys",
   },
 ];
